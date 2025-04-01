@@ -1,12 +1,11 @@
 name: NPM Publish Stable
 
 on:
-  push:
-    branches: 
-      - main
   pull_request:
-    branches: 
-      - main
+    types:
+      -closed
+    branches:
+      main
 
 concurrency:
   group: npm-publish
