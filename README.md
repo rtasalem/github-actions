@@ -2,7 +2,7 @@
 A collection of GitHub Actions.
 
 ## Contents
-### [NPM Publish Alpha](https://github.com/rtasalem/github-actions/blob/main/npm-publish-alpha.yaml)
+### [NPM Publish Alpha](./npm-publish-alpha.yml)
 - Publishing an alpha release version of a Node.js package to the NPM registry. 
 - This action is triggered when pushing to any branch excluding the `main` branch. 
 - A custom alpha tag is created in the format of 
@@ -17,7 +17,7 @@ npm i package@1.2.3-alpha.001-patch-11-07-2025-104423
 ``` 
 - An NPM access token must be generated and added as a GitHub repository secret with the name `NPM_ACCESS_TOKEN`.  
 
-### [NPM Publish Stable](https://github.com/rtasalem/github-actions/blob/main/npm-publish-stable.yaml)
+### [NPM Publish Stable](./npm-publish-stable.yml)
 - Publishing a stable release version of a Node.js package to the NPM registry.
 - This action is triggered when pushing or merging into the `main` branch.
 - Updates the latest version of the Node.js package on the NPM registry using the version declared in the `package.json`.
