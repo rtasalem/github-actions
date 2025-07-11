@@ -5,7 +5,7 @@ A collection of GitHub Actions.
 ### [NPM Publish Alpha](./npm-publish-alpha.yml)
 - Publishing an alpha release version of a Node.js package to the NPM registry. 
 - This action is triggered when pushing to any branch excluding the `main` branch. 
-- A custom alpha tag is created in the format of 
+- A custom alpha tag is created in the following format:
 ```
 ${CURRENT_VERSION}-alpha.${SANITISED_BRANCH_NAME}-dd-mm-yyyy-hhmmss
 ``` 
