@@ -1,0 +1,27 @@
+name: NPM Publish Stable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  npm-publish-stable:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Clean install dependencies
+        run: npm ci
+      
+      - name: Authenticate to NPM
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
+
+      - name: Publish to NPM
+        run: npm publish
