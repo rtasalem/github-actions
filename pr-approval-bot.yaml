@@ -1,0 +1,19 @@
+name: PR Approval Bot
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  comment-on-approval:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post comment on approval
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Add comment here to be posted on approval of a PR.
+
